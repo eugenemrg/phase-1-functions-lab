@@ -3,7 +3,7 @@ const blockLengthInFeet = 264;
 const headquarterBlock = 42;
 
 function distanceFromHqInBlocks(pickupBlock) {
-    return (headquarterBlock > pickupBlock) ? headquarterBlock - pickupBlock : pickupBlock - headquarterBlock;
+    return Math.abs(headquarterBlock-pickupBlock)
 }
 
 function distanceFromHqInFeet(pickupBlock){
@@ -11,8 +11,7 @@ function distanceFromHqInFeet(pickupBlock){
 }
 
 function distanceTravelledInFeet(start, destination){
-    const distanceTravelledInBlocks = (destination > start) ? destination - start : start - destination;
-    return distanceTravelledInBlocks * blockLengthInFeet; 
+    return Math.abs(destination - start) * blockLengthInFeet; 
 }
 
 function calculatesFarePrice(start, destination) {
